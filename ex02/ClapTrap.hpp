@@ -28,9 +28,9 @@ class ClapTrap
 	protected:
 		ClapTrap( void );
 		std::string	_name;
-		size_t		_hit_points;
-		size_t		_energy_points;
-		size_t		_attack_damage;
+		int			_hit_points;
+		int			_energy_points;
+		int			_attack_damage;
 };
 
 #endif
