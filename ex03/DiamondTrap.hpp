@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgroo <student@42.eu>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 23:30:29 by fgroo             #+#    #+#             */
-/*   Updated: 2026/04/21 11:29:02 by fgroo            ###   ########.fr       */
+/*   Created: 2026/04/21 16:35:00 by fgroo             #+#    #+#             */
+/*   Updated: 2026/04/21 19:20:13 by fgroo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
 
-int main(void) {
-	ClapTrap claptrap("ClapTrap");
-	claptrap.attack("ClapTrap");
-	claptrap.takeDamage(5);
-	claptrap.beRepaired(5);
-	claptrap.takeDamage(10);
-	claptrap.attack("ClapTrap");
-	claptrap.beRepaired(10);
-	return 0;
-}
+# include "FragTrap.hpp"
+# include "ScavTrap.hpp"
 
+class DiamondTrap : public ScavTrap, public FragTrap {
+	public :
+		DiamondTrap( std::string name);
+		~DiamondTrap();
+		using		ScavTrap::attack;
+		void		whoAmI();
+
+	private :
+		std::string	_name;
+};
+
+#endif

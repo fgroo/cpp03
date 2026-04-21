@@ -6,14 +6,14 @@
 /*   By: fgroo <student@42.eu>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 16:19:18 by fgroo             #+#    #+#             */
-/*   Updated: 2026/04/21 14:34:45 by fgroo            ###   ########.fr       */
+/*   Updated: 2026/04/21 15:28:58 by fgroo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hit_points(10), _energy_points(10), _attack_damage(0) {
-	std::cout << "*ClapTrap [" << this->_name << "] joined the party*" << std::endl;
+	std::cout << "ClapTrap " << this->_name << " has been created." << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other) {
@@ -33,7 +33,7 @@ ClapTrap::~ClapTrap( void ) {
 
 void	ClapTrap::attack(const std::string& target) {
 		if (!_energy_points)
-			std::cout << "no energy left" << std::endl;
+			std::cout << "ClapTrap " << this->_name << " has no energy left" << std::endl;
 		else if (!this->_hit_points)
 			std::cout << "ClapTrap " << this->_name << " is already dead." << std::endl;
 		else {
@@ -58,7 +58,7 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 
 void	ClapTrap::beRepaired(unsigned int amount) {
 	if (!this->_energy_points)
-		std::cout << "no energy left" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " has no energy left" << std::endl;
 	else if (!this->_hit_points)
 		std::cout << "ClapTrap " << this->_name << " is already dead." << std::endl;
 	else {

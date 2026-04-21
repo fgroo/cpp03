@@ -6,7 +6,7 @@
 /*   By: fgroo <student@42.eu>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 23:42:49 by fgroo             #+#    #+#             */
-/*   Updated: 2026/04/21 15:00:50 by fgroo            ###   ########.fr       */
+/*   Updated: 2026/04/21 16:20:37 by fgroo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ ScavTrap	&ScavTrap::operator=( const ScavTrap &other ) {
 }
 
 ScavTrap::~ScavTrap( void ) {
-	std::cout << "*and put the ScavTrap constume in the trash can*" << std::endl;
+	std::cout << "*ScavTrap [" << this->_name << "] left the party*" << std::endl;
 }
 
 void	ScavTrap::attack(const std::string& target) {

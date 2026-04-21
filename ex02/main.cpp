@@ -6,12 +6,13 @@
 /*   By: fgroo <student@42.eu>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 23:30:29 by fgroo             #+#    #+#             */
-/*   Updated: 2026/04/21 13:49:42 by fgroo            ###   ########.fr       */
+/*   Updated: 2026/04/21 16:20:12 by fgroo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main(void) {
 	ClapTrap claptrap("ClapTrap");
@@ -40,6 +41,23 @@ int main(void) {
 
 	ClapTrap *ptr = &scavtrap;
 	ptr->attack("Nobody");
+
+	FragTrap fragtrap("FragTrap");
+	fragtrap.attack("ClapTrap");
+	fragtrap.takeDamage(5);
+	fragtrap.beRepaired(5);
+	fragtrap.takeDamage(10);
+	fragtrap.attack("ClapTrap");
+	fragtrap.beRepaired(10);
+	fragtrap.highFivesGuys();
+
+	fragtrap.takeDamage(100);
+	fragtrap.attack("Nobody");
+	fragtrap.beRepaired(10);
+	fragtrap.highFivesGuys();
+
+	FragTrap copy2 = fragtrap;
+	copy.attack("Nobody");
 	return 0;
 }
 

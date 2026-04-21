@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgroo <student@42.eu>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 23:30:29 by fgroo             #+#    #+#             */
-/*   Updated: 2026/04/21 11:29:02 by fgroo            ###   ########.fr       */
+/*   Created: 2026/04/21 15:32:40 by fgroo             #+#    #+#             */
+/*   Updated: 2026/04/21 19:26:18 by fgroo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef	FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-int main(void) {
-	ClapTrap claptrap("ClapTrap");
-	claptrap.attack("ClapTrap");
-	claptrap.takeDamage(5);
-	claptrap.beRepaired(5);
-	claptrap.takeDamage(10);
-	claptrap.attack("ClapTrap");
-	claptrap.beRepaired(10);
-	return 0;
-}
+# include "ClapTrap.hpp"
 
+class FragTrap : public ClapTrap {
+	public:
+		FragTrap( std::string name);
+		FragTrap( const FragTrap &other );
+		FragTrap	&operator=( const FragTrap &other);
+		~FragTrap( void );
+		void		attack(const std::string& target);
+		void		highFivesGuys(void);
+};
+
+#endif

@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgroo <student@42.eu>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 23:30:29 by fgroo             #+#    #+#             */
-/*   Updated: 2026/04/21 11:29:02 by fgroo            ###   ########.fr       */
+/*   Created: 2026/04/20 23:42:45 by fgroo             #+#    #+#             */
+/*   Updated: 2026/04/21 00:05:51 by fgroo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-int main(void) {
-	ClapTrap claptrap("ClapTrap");
-	claptrap.attack("ClapTrap");
-	claptrap.takeDamage(5);
-	claptrap.beRepaired(5);
-	claptrap.takeDamage(10);
-	claptrap.attack("ClapTrap");
-	claptrap.beRepaired(10);
-	return 0;
-}
+# include "ClapTrap.hpp"
 
+class ScavTrap : public ClapTrap {
+	public:
+		ScavTrap( std::string name );
+		ScavTrap( const ScavTrap &other );
+		ScavTrap	&operator=( const ScavTrap &other );
+		~ScavTrap( void );
+		void		attack( const std::string& target );
+		void		guardGate( void );
+};
+
+#endif

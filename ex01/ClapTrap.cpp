@@ -6,13 +6,13 @@
 /*   By: fgroo <student@42.eu>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 16:19:18 by fgroo             #+#    #+#             */
-/*   Updated: 2026/04/21 00:03:05 by fgroo            ###   ########.fr       */
+/*   Updated: 2026/04/21 14:35:09 by fgroo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _hit_points(100), _energy_points(50), _attack_damage(20) {
+ClapTrap::ClapTrap(std::string name) : _name(name), _hit_points(10), _energy_points(10), _attack_damage(0) {
 	std::cout << "ClapTrap " << this->_name << " has been created." << std::endl;
 }
 
@@ -23,7 +23,7 @@ ClapTrap::ClapTrap(const ClapTrap &other) {
 
 ClapTrap	&ClapTrap::operator=(const ClapTrap &other) {
 	if (this != &other)
-		this->_name = other._name;
+		this->_name = other._name, this->_hit_points = other._hit_points, this->_energy_points = other._energy_points, this->_attack_damage = other._attack_damage;
 	return *this;
 }
 
@@ -33,7 +33,7 @@ ClapTrap::~ClapTrap( void ) {
 
 void	ClapTrap::attack(const std::string& target) {
 		if (!_energy_points)
-			std::cout << "no energy left" << std::endl;
+			std::cout << "ClapTrap " << this->_name << " has no energy left" << std::endl;
 		else if (!this->_hit_points)
 			std::cout << "ClapTrap " << this->_name << " is already dead." << std::endl;
 		else {
@@ -58,7 +58,7 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 
 void	ClapTrap::beRepaired(unsigned int amount) {
 	if (!this->_energy_points)
-		std::cout << "no energy left" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " has no energy left" << std::endl;
 	else if (!this->_hit_points)
 		std::cout << "ClapTrap " << this->_name << " is already dead." << std::endl;
 	else {

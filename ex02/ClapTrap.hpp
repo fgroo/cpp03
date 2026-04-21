@@ -6,14 +6,14 @@
 /*   By: fgroo <student@42.eu>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 16:10:31 by fgroo             #+#    #+#             */
-/*   Updated: 2026/04/21 19:26:30 by fgroo            ###   ########.fr       */
+/*   Updated: 2026/04/21 16:20:53 by fgroo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
 
-# include <iostream>
+#include <iostream>
 
 class ClapTrap
 {

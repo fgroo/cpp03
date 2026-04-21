@@ -1,6 +1,6 @@
 .PHONY: all clean fclean re
 
-NAME = ex01
+NAME = ex03
 
 CXX = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
@@ -8,6 +8,8 @@ CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 SRC += main.cpp 
 SRC += ClapTrap.cpp
 SRC += ScavTrap.cpp
+SRC += FragTrap.cpp
+SRC += DiamondTrap.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
